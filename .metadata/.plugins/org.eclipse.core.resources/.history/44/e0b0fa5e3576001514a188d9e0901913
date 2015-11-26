@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Login</title>
+</head>
+<body>
+
+<form tag="Create Logon">
+		<div align="center">
+		    First Name * : <input type="username" name="Firstname" />
+		    Second Name * : <input type="username" name="Secondname" />
+			User name *: <input type="username" name="username" />
+ 
+			Password *: <input type="password" name="pwd" />
+ 
+			Surname *: <input type="surname" name="surname" />
+ 
+			Other Names *: <input type="other names" name="names" />
+ 
+			Date of Birth *: <input type="date of birth" name="dob" />
+ 
+			Email *: <input type="email" name="email" />
+ 
+			Telephone: <input type="telephone" name="tel" />
+ 
+			Address *: <input type="address" name="add" />
+ 
+			Post Code *: <input type="postcode" name="ptc" />
+ 
+
+		<input type="submit" value="Submit" />
+		</div>
+</body>
+</html>

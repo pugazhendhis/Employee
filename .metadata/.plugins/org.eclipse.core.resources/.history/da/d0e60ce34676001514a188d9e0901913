@@ -1,0 +1,48 @@
+package pugazh.j2ee;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+@SuppressWarnings("serial")
+public class J2EEProjectServlet extends HttpServlet 
+{
+	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException 
+	{
+		resp.setContentType("text/plain");
+		resp.getWriter().println("Hello, world");
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException
+	{
+		resp.setContentType("text/plain");
+		Map<String,User> userMap=new HashMap<String,User>();
+		String firstName,secondName,userName,email,dateofbirth,mobile;
+		firstName=req.getParameter("firstname");
+		secondName=req.getParameter("secondname");
+		userName=req.getParameter("userName");
+		email=req.getParameter("email");
+		dateofbirth=req.getParameter("dob");
+		mobile=req.getParameter("mobile");
+		User userObject=new User();
+		userObject.setUserName(userName);
+		userObject.setFirstName(firstName);
+		userObject.setLastName(secondName); 
+		userObject.setEmail(email);
+		userObject.setDateOfBirth(dateofbirth);
+		userObject.setMobile(mobile);
+		
+		userMap.put(userObject.getUserName(), userObject);
+		
+		
+		
+		
+		resp.getWriter().println("Hello, world");
+		 
+	}
+	
+}

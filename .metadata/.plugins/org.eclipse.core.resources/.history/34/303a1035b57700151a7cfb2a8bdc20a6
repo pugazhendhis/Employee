@@ -1,0 +1,66 @@
+package pugazh.j2ee;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+@SuppressWarnings("serial")
+public class J2EEProjectServlet extends HttpServlet 
+{
+	
+	HashMap<String,User> userMap=new HashMap<String,User>();
+	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException 
+	{
+		resp.setContentType("text/plain");
+		resp.getWriter().println("Hello, world");
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException
+	{
+		PrintWriter writer=resp.getWriter();
+		resp.setContentType("text/plain");
+		
+		String firstName,secondName,userName,email,dateofbirth,mobile;
+		firstName=req.getParameter("firstname");
+		secondName=req.getParameter("secondname");
+		userName=req.getParameter("userName");
+		email=req.getParameter("email");
+		dateofbirth=req.getParameter("dob");
+		mobile=req.getParameter("mobile");
+		User userObject=new User();
+ 		userObject.setUserName(userName);
+		userObject.setFirstName(firstName);
+		userObject.setLastName(secondName); 
+		userObject.setEmail(email);
+		userObject.setDateOfBirth(dateofbirth);
+		userObject.setMobile(mobile);
+  		req.setAttribute("map", userObject);
+  		writer.print("<h3><b>User Name <b></h3>");
+  		writer.println(req.getParameter("username"));
+  		writer.print("<h3>First Name:</h3> ");
+  		writer.println(req.getParameter("firstname"));
+  		writer.print("<h3>Second Name: </h3>");
+  		writer.println(req.getParameter("secondname"));
+  		 writer.print("<h3>Email Id</h3> ");
+  		writer.println(req.getParameter("email"));
+  		writer.print("<h3>Date of Birth</h3> ");
+  		writer.println(req.getParameter("dob"));
+  		writer.print("<h3>Mobile number: </h3>");
+  		writer.println(req.getParameter("mobile"));
+		
+		
+  		
+		//RequestDispatcher rd=req.getRequestDispatcher("login.jsp"); 
+		//rd.forward(req, resp);
+	
+		  
+	}
+	
+	 	
+}

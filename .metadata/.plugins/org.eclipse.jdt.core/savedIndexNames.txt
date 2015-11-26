@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+D:\J2EE\CloudApp\.metadata\.plugins\org.eclipse.jdt.core
+2455731777.index
+145002494.index
